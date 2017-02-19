@@ -8,16 +8,181 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- JQuery Link -->
-	<script
-    src="https://code.jquery.com/jquery-3.1.1.js"
-    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-    crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <script type="text/javascript">
+    	
+    	$(document).ready(function(){
+
+			var wins = 0;
+			var losses = 0;
+			
+			// This is the sum of the guesses added together. 
+			var counter = 0;
+
+			var crystal1 = 0;
+			var crystal2 = 0;
+			var crystal3 = 0;
+
+			// var crystal1 = Math.floor(Math.random() * 20 + 1;
+
+
+			function CrystalNumber(crystalName) {
+				return Math.floor(Math.random() * 12 - 1) + 1;
+			};
+
+			crystal1 = CrystalNumber(crystal1);
+			crystal2 = CrystalNumber(crystal2);
+			crystal3 = CrystalNumber(crystal3);
+			console.log(crystal1, crystal2, crystal3);
+
+			// This shows the value of each crystal. 
+			// $("#crystal1_span").html(CrystalNumber(crystal1));
+			// $("#crystal2_span").html(CrystalNumber(crystal2));
+			// $("#crystal3_span").html(CrystalNumber(crystal3));
+
+
+			var numberGuess = Math.floor(Math.random() * 120) + 19;
+
+			// Check to see if the numberGuess is working. 
+			console.log(numberGuess);
+
+			// This sends the number to guess to the #numberToGuess div
+			$("#numberToGuess").html(numberGuess);
+
+			// $("#playerScore").html(counter);
+			// $("#playerWins").html(wins);
+			// $("#playerLosses").html(losses);
+
+			// This is the function that controls the game play. 
+			function game () {
+
+				// These show the current score. 
+				$("#playerCounter").html(counter);
+				$("#playerWins").html(wins);
+				$("playerLosses").html(losses);
+
+				//Crystal #1 function. 
+				$("#crystal1_span").on("click", function(){
+
+					counter = counter + crystal1;
+					$("#playerCounter").html(counter);
+					console.log(counter);
+
+					if (counter > numberGuess) {
+						losses = losses +1;
+						alert("You lost Crystal Counter")
+						$("#playerLosses").html(losses);
+						gameReset();
+					} else if (counter === numberGuess) {
+						wins = wins + 1;
+						alert("You won Crystal Counter!");
+					};
+
+				});
+
+				// Crystal 2 function. 
+				$("#crystal2_span").on("click", function(){
+
+					counter = counter + crystal2;
+					$("#playerCounter").html(counter);
+					console.log(counter);
+
+					if (counter > numberGuess) {
+						losses = losses +1;
+						alert("You lost Crystal Counter")
+						$("#playerLosses").html(losses);
+						gameReset();
+					} else if (counter === numberGuess) {
+						wins = wins + 1;
+						alert("You won Crystal Counter!");
+					};
+
+				});
+
+				// Crystal 3 function. 
+				$("#crystal3_span").on("click", function(){
+
+					counter = counter + crystal3;
+					$("#playerCounter").html(counter);
+					console.log(counter);
+
+					if (counter > numberGuess) {
+						losses = losses +1;
+						alert("You lost Crystal Counter")
+						$("#playerLosses").html(losses);
+						gameReset();
+					} else if (counter === numberGuess) {
+						wins = wins + 1;
+						alert("You won Crystal Counter!");
+					};
+
+				});
+
+				function gameReset () {
+
+					
+
+				};
+
+
+				// if (counter < numberGuess) {
+					// console.log(counter);
+				// } 
+				// else if (counter > numberGuess) 
+					// losses = losses + 1;
+					// alert("You lost Crystal Counter");
+					
+				// };
+
+
+			};
+
+			game();
+
+
+			// function NewCrystal () {
+
+			// This generates a number between 1 and 121. This is the number we are going to guess. 
+			// var random_num = Math.random() * 120 + 1;
+			// random_num = Math.floor(random_num);
+
+			// console.log(random_num);
+
+
+
+
+			
+
+
+
+		});		
+
+
+
+
+    </script>
 
 </head>
 <body>
 
+<div class="row">
+	
+	<div class="col-sm-3">Number to guess: <span id="numberToGuess"></span></div>
+	<div class="col-sm-3"><button id="crystal1_span">Crystal 1</button></div>
+	<div class="col-sm-3"><button id="crystal2_span">Crystal 2</button></div>
+	<div class="col-sm-3"><button id="crystal3_span">Crystal 3</button></div>
 
+</div>
 
+<div class="row">
+	
+	<div class="col-sm-3"><p>Crystal counter: <span id="playerCounter"></span></p></div>
+	<div class="col-sm-3"><p>Player Wins: <span id="playerWins"></span></p></div>
+	<div class="col-sm-3"><p>Player Losses: <span id="playerLosses"></span></p></div>
+	<div class="col-sm-3"><p>Empty <span id="crystal3_span"></span></p></div>
+
+</div>
 
 
 
