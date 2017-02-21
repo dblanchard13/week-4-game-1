@@ -1,8 +1,52 @@
-button {
-	size: 200px;
-}
-
 h1 {
 
-	color: red;
+	color: black;
+	padding: 50px;
+	margin: 25px;
+	font-size: 86px;
+	font-family: 'Bahiana', cursive;
 }
+
+p {
+
+	font-size: 35px;
+	color: black;
+	font-family: 'Bahiana', cursive;
+	padding: 15px;
+	margin: 25px 15px 25px 15px;
+
+}
+
+#wrapper {
+
+	background-image: url("../images/background.jpg");
+	background-size: 100% 100%;
+    /*background-position: center;*/
+
+}
+
+#picColumn {
+	
+	text-align: center;
+	/*margin-right: 50px;*/
+	/*margin-left: 50px;*/
+	display: inline-block;
+	margin-bottom: 50px;
+	
+}
+
+#footer {
+
+	margin: 110px;
+}
+
+.btn-primary-outline {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/*#numberToGuess, #playerCounter, #playerWins, #playerLosses{*/
+
+	/*font-size: 20px;*/
+	/*color: black;*/
+/*}*/

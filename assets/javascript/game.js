@@ -11,6 +11,12 @@ $(document).ready(function(){
 			var crystal3 = 0;
 			var crystal4 = 0;
 
+			var audioElement1 = document.createElement("audio");
+      		audioElement1.setAttribute("src", "./Assets/register.mp3");
+
+      		var audioElement2 = document.createElement("audio");
+      		audioElement2.setAttribute("src", "./Assets/register.WAV");
+
 
 			// This function chooses the random number for each crystal. 
 			function CrystalNumber(crystalName) {
@@ -42,6 +48,8 @@ $(document).ready(function(){
 				//Crystal #1 function. 
 				$("#crystal1_span").on("click", function(){
 
+					audioElement1.play();
+					$(".target").effect( "shake", {times:4}, 1000 );
 					counter = counter + crystal1;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -62,6 +70,7 @@ $(document).ready(function(){
 				// Crystal 2 function. 
 				$("#crystal2_span").on("click", function(){
 
+					audioElement2.play();
 					counter = counter + crystal2;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -81,6 +90,7 @@ $(document).ready(function(){
 				// Crystal 3 function. 
 				$("#crystal3_span").on("click", function(){
 
+					audioElement1.play();
 					counter = counter + crystal3;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -100,6 +110,7 @@ $(document).ready(function(){
 				// Crystal 4 function. 
 				$("#crystal4_span").on("click", function(){
 
+					audioElement2.play();
 					counter = counter + crystal4;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -138,13 +149,14 @@ $(document).ready(function(){
 
 					numberGuess = 0;
 
-					var numberGuess = Math.floor(Math.random() * 120) + 19;
+					numberGuess = Math.floor(Math.random() * 120) + 19;
 
 					// Check to see if the numberGuess is working. 
 					console.log(numberGuess);
 
 					// This sends the number to guess to the #numberToGuess div
 					$("#numberToGuess").html(numberGuess);
+
 
 				};
 
@@ -168,7 +180,7 @@ $(document).ready(function(){
 
 					$("#playerCounter").html(counter);
 
-					var numberGuess = Math.floor(Math.random() * 120) + 19;
+					numberGuess = Math.floor(Math.random() * 120) + 19;
 
 					// Check to see if the numberGuess is working. 
 					console.log(numberGuess);
