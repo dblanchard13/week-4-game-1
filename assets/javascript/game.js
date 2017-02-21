@@ -49,7 +49,6 @@ $(document).ready(function(){
 				$("#crystal1_span").on("click", function(){
 
 					audioElement1.play();
-					$(".target").effect( "shake", {times:4}, 1000 );
 					counter = counter + crystal1;
 					$("#playerCounter").html(counter);
 					console.log(counter);
