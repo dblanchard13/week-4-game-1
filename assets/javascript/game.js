@@ -17,6 +17,9 @@ $(document).ready(function(){
       		var audioElement2 = document.createElement("audio");
       		audioElement2.setAttribute("src", "./Assets/register.WAV");
 
+      		var song = document.createElement("audio");
+      		song.setAttribute("src", "./Assets/song.mp3");
+
 
 			// This function chooses the random number for each crystal. 
 			function CrystalNumber(crystalName) {
@@ -38,6 +41,9 @@ $(document).ready(function(){
 			$("#numberToGuess").html(numberGuess);
 
 			// This is the function that controls the game play. 
+
+			// song.play();
+
 			function game () {
 
 				// These show the current score. 
@@ -47,7 +53,7 @@ $(document).ready(function(){
 
 				//Crystal #1 function. 
 				$("#crystal1_span").on("click", function(){
-
+					$( "#crystal1_span" ).effect( "shake" );
 					audioElement1.play();
 					counter = counter + crystal1;
 					$("#playerCounter").html(counter);
@@ -70,6 +76,7 @@ $(document).ready(function(){
 				$("#crystal2_span").on("click", function(){
 
 					audioElement2.play();
+					$( "#crystal2_span" ).effect( "shake" );
 					counter = counter + crystal2;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -90,6 +97,7 @@ $(document).ready(function(){
 				$("#crystal3_span").on("click", function(){
 
 					audioElement1.play();
+					$( "#crystal3_span" ).effect( "shake" );
 					counter = counter + crystal3;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -110,6 +118,7 @@ $(document).ready(function(){
 				$("#crystal4_span").on("click", function(){
 
 					audioElement2.play();
+					$( "#crystal4_span" ).effect( "shake" );
 					counter = counter + crystal4;
 					$("#playerCounter").html(counter);
 					console.log(counter);

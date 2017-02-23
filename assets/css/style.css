@@ -17,6 +17,16 @@ p {
 
 }
 
+#Nav {
+
+	font-size: 20px;
+	color: black;
+	font-family: 'Bahiana', cursive;
+	padding: 0px;
+	margin: 5px 5px 10px 5px;	
+
+}
+
 #wrapper {
 
 	background-image: url("../images/background.jpg");
@@ -43,6 +53,13 @@ p {
 .btn-primary-outline {
   background-color: transparent;
   border-color: transparent;
+  display: inline-block;
+
+}
+
+#crystalWrapper {
+
+	position: absolute;
 }
 
 /*#numberToGuess, #playerCounter, #playerWins, #playerLosses{*/
