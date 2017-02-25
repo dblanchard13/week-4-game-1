@@ -12,13 +12,13 @@ $(document).ready(function(){
 			var crystal4 = 0;
 
 			var audioElement1 = document.createElement("audio");
-      		audioElement1.setAttribute("src", "./Assets/register.mp3");
+      		audioElement1.setAttribute("src", "https://s3-us-west-1.amazonaws.com/week4sounds/sounds/register.WAV");
 
       		var audioElement2 = document.createElement("audio");
-      		audioElement2.setAttribute("src", "./Assets/register.WAV");
+      		audioElement2.setAttribute("src", "https://s3-us-west-1.amazonaws.com/week4sounds/sounds/register.mp3");
 
       		var song = document.createElement("audio");
-      		song.setAttribute("src", "./Assets/song.mp3");
+      		song.setAttribute("src", "https://s3-us-west-1.amazonaws.com/week4sounds/sounds/song.mp3");
 
 
 			// This function chooses the random number for each crystal. 
