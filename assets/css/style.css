@@ -17,6 +17,12 @@ p {
 
 }
 
+a {
+
+	color: black;
+
+}
+
 #Nav {
 
 	font-size: 20px;
@@ -24,6 +30,24 @@ p {
 	font-family: 'Bahiana', cursive;
 	padding: 0px;
 	margin: 5px 5px 10px 5px;	
+
+}
+
+#startButton {
+  background-color: transparent;
+  border-color: transparent;
+  /*display: inline-block;*/
+  font-family: 'Bahiana', cursive;
+  font-size: 50px;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 100px;
+
+}
+
+#click {
+
+	color: red;
 
 }
 

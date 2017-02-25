@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 			// This function chooses the random number for each crystal. 
 			function CrystalNumber(crystalName) {
-				return Math.floor(Math.random() * 12 - 1) + 1;
+				return Math.ceil(Math.random() * 12 - 1) + 1;
 			};
 
 			crystal1 = CrystalNumber(crystal1);
@@ -51,9 +51,20 @@ $(document).ready(function(){
 				$("#playerWins").html(wins);
 				$("#playerLosses").html(losses);
 
+
+				$("#startButton").on("click", function(){
+					// song.play();
+					audioElement1.play();
+					$( "#startButton" ).effect( "puff" );
+					$( "#crystal1_span" ).effect( "pulsate" );
+					$( "#crystal2_span" ).effect( "pulsate" );
+					$( "#crystal3_span" ).effect( "pulsate" );
+					$( "#crystal4_span" ).effect( "pulsate" );
+				});
+
 				//Crystal #1 function. 
 				$("#crystal1_span").on("click", function(){
-					$( "#crystal1_span" ).effect( "shake" );
+					$( "#crystal1_span" ).effect( "pulsate" );
 					audioElement1.play();
 					counter = counter + crystal1;
 					$("#playerCounter").html(counter);
@@ -76,7 +87,7 @@ $(document).ready(function(){
 				$("#crystal2_span").on("click", function(){
 
 					audioElement2.play();
-					$( "#crystal2_span" ).effect( "shake" );
+					$( "#crystal2_span" ).effect( "pulsate" );
 					counter = counter + crystal2;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -97,7 +108,7 @@ $(document).ready(function(){
 				$("#crystal3_span").on("click", function(){
 
 					audioElement1.play();
-					$( "#crystal3_span" ).effect( "shake" );
+					$( "#crystal3_span" ).effect( "pulsate" );
 					counter = counter + crystal3;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -118,7 +129,7 @@ $(document).ready(function(){
 				$("#crystal4_span").on("click", function(){
 
 					audioElement2.play();
-					$( "#crystal4_span" ).effect( "shake" );
+					$( "#crystal4_span" ).effect( "pulsate" );
 					counter = counter + crystal4;
 					$("#playerCounter").html(counter);
 					console.log(counter);
@@ -143,6 +154,7 @@ $(document).ready(function(){
 					$("#playerLosses").html(losses);
 
 					alert("You lost Crystal Collector!");
+
 
 					crystal1 = CrystalNumber(crystal1);
 					crystal2 = CrystalNumber(crystal2);
@@ -171,6 +183,7 @@ $(document).ready(function(){
 
 				function gameWin () {
 
+					song.play();
 
 					wins = wins + 1;
 
