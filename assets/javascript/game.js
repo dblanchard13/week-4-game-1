@@ -46,6 +46,7 @@ $(document).ready(function(){
   });
 
   function generateRandomNumber (min, max) {
+    max -= min;
     return Math.floor(Math.random() * max) + min;
   };
 
